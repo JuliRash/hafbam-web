@@ -1,0 +1,44 @@
+name: Deploy Flutter Web to Ubuntu
+
+on:
+  push:
+    branches:
+      - main   # or the branch you deploy from
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.24.0" # match your Flutter version
+          channel: stable
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build Flutter Web
+        run: flutter build web --release
+
+      - name: Copy files to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_KEY }}
+          source: "build/web/*"
+          target: "/var/www/hafbam-app"
+
+      - name: Restart Nginx
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_KEY }}
+          script: |
+            sudo systemctl restart nginx
