@@ -12,7 +12,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 /// Start Authentication Group Code
 
 class AuthenticationGroup {
-  static String getBaseUrl() => 'https://hafbam.ricive.com/api/v1/auth';
+  static String getBaseUrl() => 'https://hafbamfinance.com/api/v1/auth';
   static Map<String, String> headers = {
     'Accept': 'application/json',
   };
@@ -501,7 +501,7 @@ class ProfileGroup {
   static String getBaseUrl({
     String? bearerAuth = '',
   }) =>
-      'https://hafbam.ricive.com/api/v1';
+      'https://hafbamfinance.com/api/v1';
   static Map<String, String> headers = {
     'Accept': 'application/json',
     'Authorization': 'Bearer [bearerAuth]',
@@ -1029,7 +1029,7 @@ class TransactionsGroup {
   static String getBaseUrl({
     String? bearerAuth = '',
   }) =>
-      'https://hafbam.ricive.com/api/v1/';
+      'https://hafbamfinance.com/api/v1/';
   static Map<String, String> headers = {
     'Accept': 'application/json',
     'Authorization': 'Bearer [bearerAuth]',
@@ -1315,7 +1315,7 @@ class InvestmentsGroup {
   static String getBaseUrl({
     String? bearerAuth = '',
   }) =>
-      'https://hafbam.ricive.com/api/v1';
+      'https://hafbamfinance.com/api/v1';
   static Map<String, String> headers = {
     'Accept': 'application/json',
     'Authorization': 'Bearer [bearerAuth]',
@@ -1480,7 +1480,7 @@ class BillsGroup {
   static String getBaseUrl({
     String? bearerAuth = '',
   }) =>
-      'https://hafbam.ricive.com/api/v1/bills';
+      'https://hafbamfinance.com/api/v1/bills';
   static Map<String, String> headers = {
     'Accept': 'application/json',
     'Authorization': 'Bearer [bearerAuth]',
@@ -2219,7 +2219,7 @@ class CommonGroup {
   static String getBaseUrl({
     String? bearerAuth = '',
   }) =>
-      'https://hafbam.ricive.com/api/v1';
+      'https://hafbamfinance.com/api/v1';
   static Map<String, String> headers = {
     'Accept': 'application/json',
     'Authorisation': 'Bearer [bearerAuth]',
@@ -2380,7 +2380,7 @@ class SavingsGroup {
   static String getBaseUrl({
     String? bearerAuth = '',
   }) =>
-      'https://hafbam.ricive.com/api/v1/savings';
+      'https://hafbamfinance.com/api/v1/savings';
   static Map<String, String> headers = {
     'Accept': 'application/json',
     'Authorization': 'Bearer [bearerAuth]',
